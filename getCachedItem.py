@@ -59,7 +59,7 @@ STATUS_VALID = 1
 class GetCachedItem(object):
 
 	def __init__(self):
-		self.useragent = 'getCachedItem/0.3'
+		self.useragent = 'getCachedItem/0.4'
 		self.status = STATUS_NO_FILE_SET
 		self.verbose = 0
 
@@ -152,8 +152,10 @@ class GetCachedItem(object):
 			else:
 				return STATUS_VALID
 		else:
+			if this.verbose: print "gCI: Did not find item in cache (" + cacheName + ")",
 			return STATUS_NOT_IN_CACHE
 	
+		if this.verbose: print "gCI: Error searching item in cache (" + cacheName + ")",
 		return STATUS_ERROR
 
 
